@@ -12,28 +12,28 @@
 require_once("phpbase/database/baseModel.php");
 
 
-class temp extends baseModel{
-	public $id;
-	public $name;
-	public $password;
-	public $des;
+// class temp extends baseModel{
+// 	public $id;
+// 	public $name;
+// 	public $password;
+// 	public $des;
 
-	public function __construct($i=null, $n="", $p="", $d=""){
-		parent::__construct();
-		if ($i or $n or $p or $d){
-			$this->id = $i;
-			$this->name = $n;
-			$this->password = $p;
-			$this->des = $d;
-		}
-	}
+// 	public function __construct($i=null, $n="", $p="", $d=""){
+// 		parent::__construct();
+// 		if ($i or $n or $p or $d){
+// 			$this->id = $i;
+// 			$this->name = $n;
+// 			$this->password = $p;
+// 			$this->des = $d;
+// 		}
+// 	}
 
-	public function getFields(){
-		return "id, name, password, des";
-	}
-}
+// 	public function getFields(){
+// 		return "id, name, password, des";
+// 	}
+// }
 
-$tempModel = new temp(null, "healthy", "healthy", "this is a description.");
+// $tempModel = new temp(null, "healthy", "healthy", "this is a description.");
 // echo "test";
 
 // print_r($tempModel->selectAll(30,"name","DESC"));
@@ -55,10 +55,13 @@ $tempModel = new temp(null, "healthy", "healthy", "this is a description.");
 // echo "index.php file";
 
 
-require_once("phpbase/userAuthentication/authenticate.php");
-$ua = new authentication();
-$username = "codegluttoners";
-$password = "codegluttoners";
-// var_dump($ua->authenticateUser($username, $password));
-var_dump($ua->authenticateUser());
+// require_once("phpbase/userAuthentication/authenticate.php");
+// $ua = new authentication();
+// $username = "codegluttoners";
+// $password = "codegluttoners";
+// // var_dump($ua->authenticateUser($username, $password));
+// var_dump($ua->authenticateUser());
+
+require_once("phpbase/mailEngine/mailEngine.php");
+sendMailViaSMTP();
 ?>

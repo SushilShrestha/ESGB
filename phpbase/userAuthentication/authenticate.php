@@ -53,12 +53,12 @@
 			return false;
 		}
 
-		public function isUserValid($loginId, $password){
+		private function isUserValid($loginId, $password){
 			$hp = $this->getHashedCode($password);
 			$user = $this->db->selectUnique(array('loginid'=>$loginId, "password"=>$hp));
 			return $user;
 		}
-		public function isValidUserToken(){
+		private function isValidUserToken(){
 			if (isset($_COOKIE['name']) and isset($_COOKIE['token'])){
 				$token = $_COOKIE['token'];
 				$userName = $_COOKIE['name'];
