@@ -5,8 +5,8 @@
 	$dbName = "ESGB";
 
 	$dbUser = "root";
-	// $dbPassword = "";
-	$dbPassword = "UBUNTU";
+	$dbPassword = "";
+	// $dbPassword = "UBUNTU";
 
 
 	//authentication requirements
