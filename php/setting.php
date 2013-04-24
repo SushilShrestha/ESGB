@@ -1,13 +1,16 @@
 <?php
 	
 	//database requirements
-	$databaseName = "";
+	$hostName = "localhost";
+	$dbName = "ESGB";
 
-	$userName = "";
-	$password = "";
+	$dbUser = "root";
+	// $dbPassword = "";
+	$dbPassword = "UBUNTU";
 
 
 	//authentication requirements
 	
 
 ?>
+
