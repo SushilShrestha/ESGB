@@ -33,7 +33,7 @@ class temp extends baseModel{
 	}
 }
 
-$tempModel = new temp(null, "healthy", "healthy", "this is a description.");
+// $tempModel = new temp(null, "healthy", "healthy", "this is a description.");
 
 // echo "test";
 
@@ -43,15 +43,15 @@ $tempModel = new temp(null, "healthy", "healthy", "this is a description.");
 // echo $tempModel->getTableName();
 // print_r($tempModel->addToDB());
 // print_r($tempModel->removeFromDB(array("id"=>"13","name"=>"healthy")));
- $tempModel = $tempModel->selectUnique(array("id"=>1, "name"=>"happy"));
- $tempModel->password ="tappy";
- print_r($tempModel);
-print_r($tempModel->updateDB())
+//  $tempModel = $tempModel->selectUnique(array("id"=>1, "name"=>"happy"));
+//  $tempModel->password ="tappy";
+//  print_r($tempModel);
+// print_r($tempModel->updateDB())
 // $tem = array(4,5,2);
 // if ($tem){
 // 	print_r($tem);
 // 	echo "done";
 // }
 
-
+echo "index.php file";
 ?>

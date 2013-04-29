@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ErrorDocument 404 /ESGB/phpbase/urlRouting/handlerSquad.php
+=======
+ErrorDocument 404 /ESGB/phpbase/urlRouting/handlersquad.php
+>>>>>>> 37bc0405656bf38fb511954e3300b85081c0d616
