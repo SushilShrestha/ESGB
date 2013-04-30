@@ -33,13 +33,12 @@ class temp extends baseModel{
 	}
 }
 
-// $tempModel = new temp(null, "healthy", "healthy", "this is a description.");
-
+$tempModel = new temp(null, "healthy", "healthy", "this is a description.");
 // echo "test";
 
 // print_r($tempModel->selectAll(30,"name","DESC"));
 // print_r($tempModel->filter(array("id"=>1, "name"=>"happy")));
-// print_r ($tempModel->search(array("des"=>"is", "name"=>"app")));
+// print_r ($tempModel->search(array("des"=>"is")));  #search function is not working and will be fixed later
 // echo $tempModel->getTableName();
 // print_r($tempModel->addToDB());
 // print_r($tempModel->removeFromDB(array("id"=>"13","name"=>"healthy")));
@@ -53,5 +52,13 @@ class temp extends baseModel{
 // 	echo "done";
 // }
 
-echo "index.php file";
+// echo "index.php file";
+
+
+require_once("phpbase/userAuthentication/authenticate.php");
+$ua = new authentication();
+$username = "codegluttoners";
+$password = "codegluttoners";
+// var_dump($ua->authenticateUser($username, $password));
+var_dump($ua->authenticateUser());
 ?>
