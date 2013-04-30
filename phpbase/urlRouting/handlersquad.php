@@ -17,7 +17,7 @@
 		array_push($args, $value);
 	}
 	if (!$fn) $fn = "index";
-	include("{$_SERVER['DOCUMENT_ROOT']}ESGB/controllers/{$cn}.php");
+	require_once("{$_SERVER['DOCUMENT_ROOT']}/ESGB/controllers/{$cn}.php");
 	if (method_exists("$cn", "$fn")){
 		call_user_func_array(array($cn, $fn), $args); 
 	}else{

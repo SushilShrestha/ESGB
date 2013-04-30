@@ -1,7 +1,7 @@
 <?php
 	
 	//include information about database
-	include("{$_SERVER['DOCUMENT_ROOT']}/ESGB/phpbase/setting.php");
+	require_once("{$_SERVER['DOCUMENT_ROOT']}/ESGB/phpbase/setting.php");
 	
 	# database handler object
 	$dbh = null;

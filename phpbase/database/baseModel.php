@@ -5,7 +5,7 @@
 # http://net.tutsplus.com/tutorials/php/why-you-should-be-using-phps-pdo-for-database-access/
 
 # include database connection class
-include("database.php");
+require_once("database.php");
 
 #database loader object to load database if connection is not established
 $loader = null;
@@ -172,7 +172,7 @@ class baseModel{
 	}
 
 	public function getTableName(){
-		return get_class($this);
+		return get_class($this)."s";
 	}
 
 }

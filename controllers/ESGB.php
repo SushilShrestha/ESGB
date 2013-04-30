@@ -6,5 +6,4 @@
 			var_dump($num);
 		}
 	}
-	echo "hello dear";
 ?>

@@ -10,7 +10,7 @@
 
 
 	//authentication requirements
-	
+	$salt = "4h43k8*&jh$%H&)@4,;llkjjhgh#c%^bhy5s67%$#5hb#c%j!8";
 
 ?>
 
