@@ -90,7 +90,14 @@
 
 			setcookie("name", $userName, time()+86400);
 			setcookie("token", $tk, time()+86400);
+		}
 
+		public function deleteCookie(){
+			if (isset($_COOKIE['name']) and isset($_COOKIE['token'])){
+				setcookie("name", "", time()-10);
+				setcookie("token", "", time()-10);
+			}
+			return true;
 		}
 		// public function createTable(){
 		// 	$sql = "CREATE TABLE `esgb`.`authUsers` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `firstname` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `lastname` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `loginid` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `password` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `emailid` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, `usergroup` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT \'member\', UNIQUE (`loginid`, `emailid`)) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;";
