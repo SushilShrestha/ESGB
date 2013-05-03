@@ -19,6 +19,7 @@ require_once("phpbase/database/baseModel.php");
 // 	public $des;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // 	public function __construct($i=null, $n="", $p="", $d=""){
 // 		parent::__construct();
 // 		if ($i or $n or $p or $d){
@@ -38,6 +39,9 @@ require_once("phpbase/database/baseModel.php");
 =======
 $tempModel = new temp(null, "healthy", "healthy", "this is a description.");
 >>>>>>> 2905361481b8c595b981a856175fb79734c30caa
+=======
+$tempModel = new temp(null, "healthy", "healthy", "this is a description.");
+>>>>>>> b85d5dce5a16183d80713b90b4125077f2d8f30d
 // echo "test";
 
 // print_r($tempModel->selectAll(30,"name","DESC"));
@@ -60,6 +64,7 @@ $tempModel = new temp(null, "healthy", "healthy", "this is a description.");
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // require_once("phpbase/userAuthentication/authenticate.php");
 // $ua = new authentication();
 // $username = "codegluttoners";
@@ -70,11 +75,16 @@ $tempModel = new temp(null, "healthy", "healthy", "this is a description.");
 require_once("phpbase/mailEngine/mailEngine.php");
 sendMailViaSMTP();
 =======
+=======
+>>>>>>> b85d5dce5a16183d80713b90b4125077f2d8f30d
 require_once("phpbase/userAuthentication/authenticate.php");
 $ua = new authentication();
 $username = "codegluttoners";
 $password = "codegluttoners";
 // var_dump($ua->authenticateUser($username, $password));
 var_dump($ua->authenticateUser());
+<<<<<<< HEAD
 >>>>>>> 2905361481b8c595b981a856175fb79734c30caa
+=======
+>>>>>>> b85d5dce5a16183d80713b90b4125077f2d8f30d
 ?>

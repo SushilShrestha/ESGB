@@ -1,6 +1,6 @@
 <?php
 	$url = $_SERVER["REQUEST_URI"];
-	$ua = split("/", $url);
+	$ua = explode("/", $url);
 	$ua = array_filter($ua, 'strlen');
 	$cn = "";
 	$fn = "";
