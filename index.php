@@ -18,6 +18,7 @@ require_once("phpbase/database/baseModel.php");
 // 	public $password;
 // 	public $des;
 
+<<<<<<< HEAD
 // 	public function __construct($i=null, $n="", $p="", $d=""){
 // 		parent::__construct();
 // 		if ($i or $n or $p or $d){
@@ -34,6 +35,9 @@ require_once("phpbase/database/baseModel.php");
 // }
 
 // $tempModel = new temp(null, "healthy", "healthy", "this is a description.");
+=======
+$tempModel = new temp(null, "healthy", "healthy", "this is a description.");
+>>>>>>> 2905361481b8c595b981a856175fb79734c30caa
 // echo "test";
 
 // print_r($tempModel->selectAll(30,"name","DESC"));
@@ -55,6 +59,7 @@ require_once("phpbase/database/baseModel.php");
 // echo "index.php file";
 
 
+<<<<<<< HEAD
 // require_once("phpbase/userAuthentication/authenticate.php");
 // $ua = new authentication();
 // $username = "codegluttoners";
@@ -64,4 +69,12 @@ require_once("phpbase/database/baseModel.php");
 
 require_once("phpbase/mailEngine/mailEngine.php");
 sendMailViaSMTP();
+=======
+require_once("phpbase/userAuthentication/authenticate.php");
+$ua = new authentication();
+$username = "codegluttoners";
+$password = "codegluttoners";
+// var_dump($ua->authenticateUser($username, $password));
+var_dump($ua->authenticateUser());
+>>>>>>> 2905361481b8c595b981a856175fb79734c30caa
 ?>

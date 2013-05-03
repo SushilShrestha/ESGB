@@ -53,12 +53,20 @@
 			return false;
 		}
 
+<<<<<<< HEAD
 		private function isUserValid($loginId, $password){
+=======
+		public function isUserValid($loginId, $password){
+>>>>>>> 2905361481b8c595b981a856175fb79734c30caa
 			$hp = $this->getHashedCode($password);
 			$user = $this->db->selectUnique(array('loginid'=>$loginId, "password"=>$hp));
 			return $user;
 		}
+<<<<<<< HEAD
 		private function isValidUserToken(){
+=======
+		public function isValidUserToken(){
+>>>>>>> 2905361481b8c595b981a856175fb79734c30caa
 			if (isset($_COOKIE['name']) and isset($_COOKIE['token'])){
 				$token = $_COOKIE['token'];
 				$userName = $_COOKIE['name'];

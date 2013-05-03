@@ -11,9 +11,12 @@
 
 	//authentication requirements
 	$salt = "4h43k8*&jh$%H&)@4,;llkjjhgh#c%^bhy5s67%$#5hb#c%j!8";
+<<<<<<< HEAD
 
 	# mail requirements
 	$from = "noreply@esgb.edu.np";				# send email from this id shuld no tbe valid
+=======
+>>>>>>> 2905361481b8c595b981a856175fb79734c30caa
 
 	$smtpHost = "smtp.google.com";
 	$smtpPort = 587;
