@@ -2,13 +2,14 @@
 
 	require_once("{$_SERVER['DOCUMENT_ROOT']}/ESGB/phpbase/setting.php");
 
-	function sendMail($to, $subject, $message){
+	function sendMail($to, $subject, $message){   //it works when on server
 		$headers = "From:" . $from;
 		mail($to, $subject, $message, $headers);
 		return true;
 	}
+
 	function sendMailViaSMTP(){
-		require_once "Mail.php";
+		require_once ("Mail.php");		# not working pear library needed re!!
 
 		$from = "Sandra Sender <sender@example.com>";
 		$to = "Ramona Recipient <recipient@example.com>";

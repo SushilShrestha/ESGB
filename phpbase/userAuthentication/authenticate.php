@@ -13,11 +13,13 @@
 		public $password;
 		public $emailid;
 		public $usergroup;
+		public $batch;
+		public $program;
 
-		public function __construct($i=null, $fn="", $ln="", $lid="", $p = "", $eid = "", $ug = ""){
+		public function __construct($i=null, $fn="", $ln="", $lid="", $p = "", $eid = "", $ug = "", $ba = "", $pg = ""){
 			parent::__construct();
 
-			if ($i or $fn or $ln or $lid or $p or $eid or $ug){
+			if ($i or $fn or $ln or $lid or $p or $eid or $ug or $ba or $pg){
 				$this->id = $i;
 				$this->firstname = $fn;
 				$this->lastname = $ln;
@@ -25,15 +27,17 @@
 				$this->password = $p;
 				$this->emailid = $eid;
 				$this->usergroup = $ug;
+				$this->batch = $ba;
+				$this->program = $pg;
 			}
 		}
 
 		public function getFields(){
-			return "id, firstname, lastname, loginid, password, emailid, usergroup";
+			return "id, firstname, lastname, loginid, password, emailid, usergroup, batch, program";
 		}
 	}
 	
-	class authentication{
+	class authenticate{
 		private $db;
 
 		public function __construct(){
@@ -53,28 +57,12 @@
 			return false;
 		}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-		private function isUserValid($loginId, $password){
-=======
 		public function isUserValid($loginId, $password){
->>>>>>> 2905361481b8c595b981a856175fb79734c30caa
-=======
-		public function isUserValid($loginId, $password){
->>>>>>> b85d5dce5a16183d80713b90b4125077f2d8f30d
 			$hp = $this->getHashedCode($password);
 			$user = $this->db->selectUnique(array('loginid'=>$loginId, "password"=>$hp));
 			return $user;
 		}
-<<<<<<< HEAD
-<<<<<<< HEAD
-		private function isValidUserToken(){
-=======
 		public function isValidUserToken(){
->>>>>>> 2905361481b8c595b981a856175fb79734c30caa
-=======
-		public function isValidUserToken(){
->>>>>>> b85d5dce5a16183d80713b90b4125077f2d8f30d
 			if (isset($_COOKIE['name']) and isset($_COOKIE['token'])){
 				$token = $_COOKIE['token'];
 				$userName = $_COOKIE['name'];
@@ -88,6 +76,7 @@
 				return $rTok==$token;
 
 			}
+			return false;
 		}
 		private function getHashedCode($s){
 			$hc = hash("sha256", $s);
@@ -106,9 +95,7 @@
 
 			setcookie("name", $userName, time()+86400);
 			setcookie("token", $tk, time()+86400);
-<<<<<<< HEAD
 
-=======
 		}
 
 		public function deleteCookie(){
@@ -117,7 +104,6 @@
 				setcookie("token", "", time()-10);
 			}
 			return true;
->>>>>>> b85d5dce5a16183d80713b90b4125077f2d8f30d
 		}
 		// public function createTable(){
 		// 	$sql = "CREATE TABLE `esgb`.`authUsers` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `firstname` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `lastname` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `loginid` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `password` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `emailid` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL, `usergroup` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT \'member\', UNIQUE (`loginid`, `emailid`)) ENGINE = InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;";

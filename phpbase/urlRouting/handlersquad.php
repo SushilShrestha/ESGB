@@ -1,7 +1,7 @@
 <?php
 	$url = $_SERVER["REQUEST_URI"];
 	$ua = explode("/", $url);
-	$ua = array_filter($ua, 'strlen');
+	$ua = array_filter($ua, 'strlen');			// removing the empty array elements
 	$cn = "";
 	$fn = "";
 	$args = array();
@@ -16,12 +16,24 @@
 		}
 		array_push($args, $value);
 	}
+	
+	$docRoot = $_SERVER['DOCUMENT_ROOT'];
+	$sCheck = substr($docRoot, strlen($docRoot)-1, strlen($docRoot));
+	if ($sCheck != "/")
+		$docRoot .= "/";
+
+	require_once("{$docRoot}ESGB/phpbase/setting.php");
+	if (!$fn and !$cn)
+		$cn = $domainBaseHandler;
 	if (!$fn) $fn = "index";
-	require_once("{$_SERVER['DOCUMENT_ROOT']}/ESGB/controllers/{$cn}.php");
+	
+	require_once("{$docRoot}ESGB/controllers/{$cn}.php");
 	if (method_exists("$cn", "$fn")){
-		call_user_func_array(array($cn, $fn), $args); 
+		$cnO = new $cn();
+		call_user_func_array(array($cnO, $fn), $args); 
+		var_dump($_SERVER);
 	}else{
-		echo "Error The function '%s' on the class '%s' doesnot exists. Try implementing the method in controller.";
+		echo "Error The function '$fn' on the class '$cn' doesnot exists. Try implementing the method in controller.";
 		echo "<br /> {$_SERVER["REQUEST_URI"]} not found";
 	}
 	
